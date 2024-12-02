@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// importing router for navigation capabilities
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// importing components
+import NavBar from './client/components/NavBar';
+import Home from './client/components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* External NavBar componenet*/}
+      <NavBar />
+      <Routes>
+        {/* Routes set to components which contain the JS XML content*/}
+        <Route path="/home" element={<Home/>} />
+      </Routes>
+    </Router>
   );
 }
 
