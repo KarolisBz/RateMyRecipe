@@ -25,21 +25,17 @@ const RecipeItem = (props) => {
     };
 
     return (
-        <div>
-            <Card>
-                {/*Creating Movie Image Card with bootstrap*/}
-                <Card.Header>{props.recipe.title}</Card.Header>
+        <div class="col-auto mb-3">
+            <Card style={{ width: '18rem', height: '18rem'}}>
+                <Card.Img variant="top" src={props.recipe.thumnail} alt={props.recipe.title} style={{width: '18rem', height: '18rem'}}/>
                 <Card.Body>
-                    <blockquote className="blockquote mb-0">
-                        <img src={props.recipe.poster} alt={props.recipe.title} />
-                        <footer>{props.recipe.year}</footer>
-                    </blockquote>
+                    <Card.Title>{props.recipe.title}</Card.Title>
+                    <Card.Text>
+                        Some quick example text to build on the card title and make up the
+                        bulk of the card's content.
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
-                {/* Links user to page for movie via their passed movie ID and path*/}
-                <Link to={"/edit/" + props.recipe._id} className="btn btn-primary">Edit</Link>
-
-                {/* Delete movie btn that fires handle Delete*/}
-                <Button variant="danger" onClick={handleDelete}>Delete</Button>
             </Card>
         </div>
     );

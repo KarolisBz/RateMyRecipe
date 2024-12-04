@@ -22,21 +22,21 @@ app.use(function(req, res, next) {
 
 let testData = [
     {
-        "Title": "Scrambled Eggs",
-        "Description": "Blank",
-        "Post-Date": "2018",
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
         "thumnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
     },
     {
-        "Title": "Scrambled Eggs",
-        "Description": "Blank",
-        "Post-Date": "2018",
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
         "thumnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
     },
     {
-        "Title": "Scrambled Eggs",
-        "Description": "Blank",
-        "Post-Date": "2018",
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
         "thumnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
     }
 ]

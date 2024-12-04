@@ -31,8 +31,12 @@ const AllRecipes = () => {
     return (
         <div>
             <h3>Hello from the AllRecipes component</h3>
-            {/*Passing recipe data from read to its child movies*/}
-            <Recipes RecipeData={recipes} ReloadData={Reload}/> {/*handelling reload*/}
+            <div class="container mt-4">
+                <div class="row">
+                    {/*Passing recipe data from read to its child movies*/}
+                    <Recipes RecipeData={recipes} ReloadData={Reload}/> {/*handelling reload*/}
+                </div>
+            </div>
         </div>
     );
 };
