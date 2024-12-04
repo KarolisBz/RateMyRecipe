@@ -14,3 +14,9 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+.no-decore {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+}
