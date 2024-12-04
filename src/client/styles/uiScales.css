@@ -1,0 +1,16 @@
+.window-width {
+    width: 100vw;
+    height: auto;
+}
+
+.centered-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.eclipsed-text {
+    white-space: none;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

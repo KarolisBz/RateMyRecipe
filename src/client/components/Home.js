@@ -1,7 +1,7 @@
 // Importing React
 import React from 'react';
 import '../styles/colorTheme.css';
-import '../styles/imageScales.css';
+import '../styles/uiScales.css';
 import CoverImg from "../assests/homeCoverImg.jpg"
 import { Carousel } from 'react-bootstrap';
 

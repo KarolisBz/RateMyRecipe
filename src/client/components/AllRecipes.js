@@ -30,9 +30,8 @@ const AllRecipes = () => {
 
     return (
         <div>
-            <h3>Hello from the AllRecipes component</h3>
-            <div class="container mt-4">
-                <div class="row">
+            <div className="container mt-4">
+                <div className="row">
                     {/*Passing recipe data from read to its child movies*/}
                     <Recipes RecipeData={recipes} ReloadData={Reload}/> {/*handelling reload*/}
                 </div>

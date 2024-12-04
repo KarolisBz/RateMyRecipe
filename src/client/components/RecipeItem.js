@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom'; // navigate to a new route without refreshing the page
 import axios from "axios"; // importing axios for async operations
-import Button from 'react-bootstrap/Button'; // imports btn
+import Badge from 'react-bootstrap/Badge'; // imports btn
+import '../styles/uiScales.css';
 
 // MovieItem gets "props" data which contains 1 movie data 
 // from parent Movies
@@ -25,16 +26,21 @@ const RecipeItem = (props) => {
     };
 
     return (
-        <div class="col-auto mb-3">
-            <Card style={{ width: '18rem', height: '18rem'}}>
-                <Card.Img variant="top" src={props.recipe.thumnail} alt={props.recipe.title} style={{width: '18rem', height: '18rem'}}/>
+        <div className="col-auto mb-3" style={{ width: '18rem'}}>
+            <Card bg="light" text="black">
+                <Card.Title style={{textAlign: 'center'}}>{props.recipe.title}</Card.Title>
+                <Card.Img className="centered-image" src={props.recipe.thumbnail} alt={props.recipe.title} style={{width: '16rem', height: '16rem', objectFit: 'fill'}}/>
                 <Card.Body>
-                    <Card.Title>{props.recipe.title}</Card.Title>
-                    <Card.Text>
+                    <Card.Text className="eclipsed-text" style={{ maxHeight: '3rem'}}>
                         Some quick example text to build on the card title and make up the
                         bulk of the card's content.
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.25rem'}}>
+                        <Badge bg="dark">Calories: 1300kcal</Badge>
+                        <Badge bg="dark">Fat: 16.6g</Badge>
+                        <Badge bg="dark">Saturates: 13.8g</Badge>
+                        <Badge bg="dark">Salt: 1.92g</Badge>
+                    </div>
                 </Card.Body>
             </Card>
         </div>

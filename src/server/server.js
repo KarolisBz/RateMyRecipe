@@ -25,20 +25,38 @@ let testData = [
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
-        "thumnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
-        "thumnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
-        "thumnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
-    }
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+    },
 ]
 
 // if we get a request, 'Welcome to Data Respresentation & Querying'
