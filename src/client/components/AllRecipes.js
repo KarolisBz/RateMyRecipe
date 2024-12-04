@@ -32,7 +32,7 @@ const AllRecipes = () => {
         <div>
             <h3>Hello from the AllRecipes component</h3>
             {/*Passing recipe data from read to its child movies*/}
-            <Recipes recipeData={recipes} ReloadData={Reload}/> {/*handelling reload*/}
+            <Recipes RecipeData={recipes} ReloadData={Reload}/> {/*handelling reload*/}
         </div>
     );
 };

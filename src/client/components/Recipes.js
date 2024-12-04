@@ -6,6 +6,7 @@ import RecipeItem from "./RecipeItem";
 // from parent Read
 const Recipes = (props) => {
     // Using map function to loop through each movie
+    console.log(props)
     return props.RecipeData.map(
         (recipe) => {
             /*Sending each movie data to MovieItem to create a card with a unique KEY */

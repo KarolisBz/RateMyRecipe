@@ -47,7 +47,7 @@ app.get('/api/recipes', async(req, res) => {
     //const movies = await Movie.find({}); // empty object {} means it fetches all objects in the database
 
     // give back respone in json format with status 200 'okay'
-    res.status(200).json({testData})
+    res.status(200).json(testData)
 });
 
 // severs listens for a http request coming in

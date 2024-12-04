@@ -15,7 +15,7 @@ const RecipeItem = (props) => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        axios.delete('http://localhost:4000/api/movie/' + props.recipe._id)
+        axios.delete('http://localhost:4000/api/recipe/' + props.recipe._id)
             .then(() => {
                 props.Reload(); // Refresh the movie list after deletion from function passed down in props
             })
