@@ -4,7 +4,8 @@ import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom'; // navigate to a new route without refreshing the page
 import axios from "axios"; // importing axios for async operations
 import Badge from 'react-bootstrap/Badge'; // imports btn
-import '../styles/uiScales.css';
+import '../styles/main.css';
+import { StarFill } from "react-bootstrap-icons";
 
 // RecipeItem gets "props" data which contains 1 recipe data from parent Movies
 const RecipeItem = (props) => {
@@ -35,6 +36,14 @@ const RecipeItem = (props) => {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                         </Card.Text>
+                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.25rem'}}>
+                            <StarFill className="icon-wrap" size={"2rem"}/>
+                            <StarFill className="icon-wrap" size={"2rem"}/>
+                            <StarFill className="icon-wrap" size={"2rem"}/>
+                            <StarFill className="icon-wrap" size={"2rem"}/>
+                            <StarFill className="icon-wrap" size={"2rem"}/>
+                        </div>
+                        <p style={{textAlign: 'center'}}>0 reviews</p>
                         <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.25rem'}}>
                             <Badge bg="dark">Calories: 1300kcal</Badge>
                             <Badge bg="dark">Fat: 16.6g</Badge>

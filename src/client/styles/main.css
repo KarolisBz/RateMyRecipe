@@ -20,3 +20,8 @@
     color: inherit;
     background: none;
 }
+
+.icon-wrap {
+    color: gold;
+    margin-top: 0.3rem;
+}
