@@ -2,6 +2,7 @@
 import Recipes from "./Recipes"
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 
 // Read content to be imported
 const AllRecipes = () => {
@@ -28,8 +29,17 @@ const AllRecipes = () => {
         Reload();
     }, []); // table never changes, so only runs on page load
 
+    // search bar functionality
+
     return (
         <div>
+            <MDBInputGroup>
+                <MDBInput label='Search' />
+                <MDBBtn rippleColor='dark'>
+                    <MDBIcon icon='search' />
+                </MDBBtn>
+            </MDBInputGroup>
+
             <div className="container mt-4">
                 <div className="row">
                     {/*Passing recipe data from read to its child movies*/}
