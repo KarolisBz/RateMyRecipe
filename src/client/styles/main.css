@@ -25,3 +25,10 @@
     color: gold;
     margin-top: 0.3rem;
 }
+
+.star-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
