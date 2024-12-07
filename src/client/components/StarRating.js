@@ -7,7 +7,7 @@ const StarRating = (props) => {
 
     // getting averageRating
     reviews.forEach(review => {
-        averageRating += Number(review[0]);
+        averageRating += Number(review.rating);
     });
     averageRating = averageRating / reviews.length;
 
@@ -35,18 +35,18 @@ const StarRating = (props) => {
     return (
         <div>
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.25rem'}}>
-                {stars.map((fillPercent) => {
+                {stars.map((fillPercent, index) => {
                     if (fillPercent == 1) {
-                        return <StarFill className="icon-wrap" size={"2rem"}/> // star is fully filled, don't need 2x images
+                        return <StarFill key={index} className="icon-wrap" size={"2rem"}/> // star is fully filled, don't need 2x images
                     }
                     else if(fillPercent == 0)
                     {
-                        return <Star className="icon-wrap" size={"2rem"}/>
+                        return <Star key={index} className="icon-wrap" size={"2rem"}/>
                     }
                     else
                     {
                         return (
-                            <div style={{width: '2rem', height: '2rem', position: 'relative'}}>
+                            <div key={index} style={{width: '2rem', height: '2rem', position: 'relative'}}>
                                 <Star className="icon-wrap" size={"2rem"}/>
                                 <div className="star-fill" style={{width: `${fillPercent}%`}}>
                                     <StarFill className="icon-wrap" size={"2rem"}/>
