@@ -26,12 +26,84 @@ let testData = [
         "description": "Blank",
         "postDate": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "type": "mainDish",
         "calories": "1300",
+        "fat": "16.6",
+        "protein": "13.8",
+        "Salt": "1.92",
         "reviews": [
             { "rating": 3, "comment": "hello this is a comment" },
             { "rating": 5, "comment": "hello this is a comment 2" }
         ],
         "_id": "123123123",
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "postDate": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "calories": "1300",
+        "reviews": [
+            { "rating": 1, "comment": "hello this is a comment" },
+            { "rating": 5, "comment": "hello this is a comment 2" }
+        ],
+        "_id": "1",
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "postDate": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "calories": "1300",
+        "reviews": [
+            { "rating": 2, "comment": "hello this is a comment" },
+            { "rating": 5, "comment": "hello this is a comment 2" }
+        ],
+        "_id": "2",
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "postDate": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "calories": "1300",
+        "reviews": [
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 4, "comment": "hello this is a comment 2" }
+        ],
+        "_id": "3",
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "postDate": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "calories": "1300",
+        "reviews": [
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 5, "comment": "hello this is a comment" },
+            { "rating": 1, "comment": "hello this is a comment" },
+            { "rating": 2, "comment": "hello this is a comment" },
+            { "rating": 4, "comment": "hello this is a comment" },
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 5, "comment": "hello this is a comment 2" }
+        ],
+        "_id": "4",
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "postDate": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "calories": "1300",
+        "reviews": [
+            { "rating": 3, "comment": "hello this is a comment" },
+            { "rating": 5, "comment": "hello this is a comment 2" }
+        ],
+        "_id": "5",
     },
 ]
 
