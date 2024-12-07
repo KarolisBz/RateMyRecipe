@@ -1,12 +1,19 @@
-import { Star, StarFill } from "react-bootstrap-icons";
+import { CodeSlash, Star, StarFill } from "react-bootstrap-icons";
 import '../styles/main.css';
 
 const StarRating = (props) => {
-    let rating = props.rating
-    let reviews = props.reviews
+    let reviews = props.reviews;
+    let averageRating = 0;
+
+    // getting averageRating
+    reviews.forEach(review => {
+        averageRating += Number(review[0]);
+    });
+    averageRating = averageRating / reviews.length;
+
     // calculating star fills
-    let filledStars = Math.floor(rating);
-    let startFillPercent = rating - filledStars;
+    let filledStars = Math.floor(averageRating);
+    let startFillPercent = averageRating - filledStars;
     let stars = []
 
     // generating star array
@@ -14,12 +21,13 @@ const StarRating = (props) => {
         stars.push(1);
     }
 
-    // adding star at end
-    // mapping real width% to perceived width%
-    stars.push(startFillPercent*100);
+    if (averageRating%1 != 0) {
+        // adding star at end
+        stars.push(startFillPercent*100);
+    }
 
     // finishing array
-    let starsLeft = 5 - Math.ceil(rating);
+    let starsLeft = 5 - Math.ceil(averageRating);
     for (let i = 0; i < starsLeft; i++) {
         stars.push(0);
     }
@@ -48,7 +56,7 @@ const StarRating = (props) => {
                     }
                 })}
             </div>
-            <p style={{textAlign: 'center'}}>{"[" + rating + "]"} {reviews} reviews</p>
+            <p style={{textAlign: 'center'}}>{"[" + averageRating + "]"} {reviews.length} reviews</p>
         </div>
     );
 };

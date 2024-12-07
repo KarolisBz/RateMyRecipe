@@ -26,42 +26,49 @@ let testData = [
         "description": "Blank",
         "post-Date": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "rating": "4.3"
+        "reviews": [["3", "hello this is a comment"], ["5", "hello this is a comment 2"]]
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "rating": "3"
+        "reviews": [["3", "hello this is a comment"], ["5", "hello this is a comment 2"]]
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "rating": "1.5"
+        "reviews": [["1", "hello this is a comment"], ["5", "hello this is a comment 2"]]
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "rating": "4.9"
+        "reviews": [["2", "hello this is a comment"], ["5", "hello this is a comment 2"]]
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "rating": "2.1"
+        "reviews": [["3", "hello this is a comment"], ["5", "hello this is a comment 2"]]
     },
     {
         "title": "Scrambled Eggs",
         "description": "Blank",
         "post-Date": "2018",
         "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "rating": "2.7"
+        "reviews": [["3", "hello this is a comment"], ["5", "hello this is a comment 2"]]
+    },
+    {
+        "title": "Scrambled Eggs",
+        "description": "Blank",
+        "post-Date": "2018",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        "reviews": [["3", "hello this is a comment"], ["5", "hello this is a comment 2"]]
     },
 ]
 
