@@ -108,12 +108,36 @@ let testData = [
     },
 ]
 
+// connecting to mongoose database rateMyRecipe
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://admin:admin@cluster0.ropg5.mongodb.net/rateMyRecipe');
+
+// embedded review object
+const reviewSchema = new mongoose.Schema({
+    rating: Number,
+    comment: String,
+})
+
+// creating a recipe schema
+const recipeSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    postDate: Date,
+    recipeType: String,
+    thumbnail: String,
+    calories: Number,
+    reviews: [reviewSchema],
+  });
+
+// added data model which is a blueprint for defining the structure of data within a MongoDB collection
+const recipe = mongoose.model('recipes', recipeSchema);
+
+
 // if we get a request, 'Welcome to Data Respresentation & Querying'
 app.get('/api/recipes/:recipeType', async(req, res) => {
-    // all the movie data fetched async
-    //const movies = await Movie.find({}); // empty object {} means it fetches all objects in the database
-    let recipeType = req.params.recipeType
-    console.log(recipeType)
+    // fetch recipe based on type
+    const recipes = await recipe.find({recipeType: req.params.recipeType}); // fetching based on type
+    console.log(recipes)
 
     // give back respone in json format with status 200 'okay'
     res.status(200).json(testData)
