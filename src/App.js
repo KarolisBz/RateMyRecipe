@@ -14,7 +14,7 @@ function App() {
         {/* Routes set to components which contain the JS XML content*/}
         <Route path="/" element={<Navigate to="/home" replace/>} />
         <Route path="/home" element={<Home/>} />
-        <Route path="/Recipes/:type" element={<Recipes/>} />
+        <Route path="/Recipes/:recipeType" element={<Recipes/>} />
       </Routes>
     </Router>
   );

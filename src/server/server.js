@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 // Cross-Origin Resource Sharing
 // when browser connects to server, it's okay to accept requests outside domain
 const cors = require('cors');
+const { type } = require('@testing-library/user-event/dist/type');
 app.use(cors());
 
 app.use(function(req, res, next) {
@@ -108,9 +109,11 @@ let testData = [
 ]
 
 // if we get a request, 'Welcome to Data Respresentation & Querying'
-app.get('/api/recipes', async(req, res) => {
+app.get('/api/recipes/:recipeType', async(req, res) => {
     // all the movie data fetched async
     //const movies = await Movie.find({}); // empty object {} means it fetches all objects in the database
+    let recipeType = req.params.recipeType
+    console.log(recipeType)
 
     // give back respone in json format with status 200 'okay'
     res.status(200).json(testData)
