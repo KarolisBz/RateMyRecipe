@@ -1,5 +1,5 @@
 // importing router for navigation capabilities
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 // importing components
 import NavBar from './client/components/NavBar';
 import Home from './client/components/Home';
@@ -12,6 +12,7 @@ function App() {
       <NavBar />
       <Routes>
         {/* Routes set to components which contain the JS XML content*/}
+        <Route path="/" element={<Navigate to="/home" replace/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/AllRecipes" element={<AllRecipes/>} />
       </Routes>
