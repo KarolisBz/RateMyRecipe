@@ -1,6 +1,7 @@
 // Component Fields
 import Recipes from "./Recipes"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -12,6 +13,7 @@ import { Search } from "react-bootstrap-icons";
 const AllRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const typeDisplay = useParams();
 
     // on reload fetch updated list
     const Reload = () => {

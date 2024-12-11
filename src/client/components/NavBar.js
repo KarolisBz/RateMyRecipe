@@ -13,7 +13,7 @@ const NavBar = () => {
                     <Nav variant="tabs" defaultActiveKey={"/home"}>
                         <Nav.Link to="/home" as={NavLink} eventKey="link-1">Home</Nav.Link>
                         <Nav.Link eventKey="link-9">Create Recipe</Nav.Link>
-                        <Nav.Link to="/AllRecipes" as={NavLink} eventKey="link-2">AllRecipes</Nav.Link>
+                        <Nav.Link to="/AllRecipes/one" as={NavLink} eventKey="link-2">All Recipes</Nav.Link>
                         <Nav.Link eventKey="link-3">Favorites</Nav.Link>
                         <Nav.Link eventKey="link-4">Appetizers</Nav.Link>
                         <Nav.Link eventKey="link-5">Salads</Nav.Link>
