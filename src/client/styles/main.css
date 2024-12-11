@@ -15,6 +15,10 @@
     overflow: hidden;
 }
 
+.center-text {
+    text-align: center;
+}
+
 .no-decore {
     text-decoration: none;
     color: inherit;

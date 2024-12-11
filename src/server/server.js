@@ -21,92 +21,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-let testData = [
-    {
-        "title": "Scrambled Eggs",
-        "description": "Blank",
-        "postDate": "2018",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "type": "mainDish",
-        "calories": "1300",
-        "fat": "16.6",
-        "protein": "13.8",
-        "Salt": "1.92",
-        "reviews": [
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 5, "comment": "hello this is a comment 2" }
-        ],
-        "_id": "123123123",
-    },
-    {
-        "title": "Scrambled Eggs",
-        "description": "Blank",
-        "postDate": "2018",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "calories": "1300",
-        "reviews": [
-            { "rating": 1, "comment": "hello this is a comment" },
-            { "rating": 5, "comment": "hello this is a comment 2" }
-        ],
-        "_id": "1",
-    },
-    {
-        "title": "Scrambled Eggs",
-        "description": "Blank",
-        "postDate": "2018",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "calories": "1300",
-        "reviews": [
-            { "rating": 2, "comment": "hello this is a comment" },
-            { "rating": 5, "comment": "hello this is a comment 2" }
-        ],
-        "_id": "2",
-    },
-    {
-        "title": "Scrambled Eggs",
-        "description": "Blank",
-        "postDate": "2018",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "calories": "1300",
-        "reviews": [
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 4, "comment": "hello this is a comment 2" }
-        ],
-        "_id": "3",
-    },
-    {
-        "title": "Scrambled Eggs",
-        "description": "Blank",
-        "postDate": "2018",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "calories": "1300",
-        "reviews": [
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 5, "comment": "hello this is a comment" },
-            { "rating": 1, "comment": "hello this is a comment" },
-            { "rating": 2, "comment": "hello this is a comment" },
-            { "rating": 4, "comment": "hello this is a comment" },
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 5, "comment": "hello this is a comment 2" }
-        ],
-        "_id": "4",
-    },
-    {
-        "title": "Scrambled Eggs",
-        "description": "Blank",
-        "postDate": "2018",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-        "calories": "1300",
-        "reviews": [
-            { "rating": 3, "comment": "hello this is a comment" },
-            { "rating": 5, "comment": "hello this is a comment 2" }
-        ],
-        "_id": "5",
-    },
-]
 
 // connecting to mongoose database rateMyRecipe
 const mongoose = require('mongoose');
@@ -123,24 +37,36 @@ const recipeSchema = new mongoose.Schema({
     title: String,
     description: String,
     postDate: Date,
-    recipeType: String,
+    category: String,
     thumbnail: String,
     calories: Number,
     reviews: [reviewSchema],
   });
 
 // added data model which is a blueprint for defining the structure of data within a MongoDB collection
-const recipe = mongoose.model('recipes', recipeSchema);
+const recipeModel = mongoose.model('recipes', recipeSchema);
 
 
 // if we get a request, 'Welcome to Data Respresentation & Querying'
-app.get('/api/recipes/:recipeType', async(req, res) => {
+app.get('/api/recipes/:category', async(req, res) => {
+    // getting recipe return type
+    let query = {category: req.params.category}
+    if (req.params.category == "All") {
+        query = {}
+    }
+    
     // fetch recipe based on type
-    const recipes = await recipe.find({recipeType: req.params.recipeType}); // fetching based on type
+    const recipes = await recipeModel.find(query); // fetching based on type
     console.log(recipes)
 
     // give back respone in json format with status 200 'okay'
-    res.status(200).json(testData)
+    res.status(200).json(recipes)
+});
+
+// route fetches a specific recipe by its ID
+app.get('/api/recipe/:id', async (req, res) => {
+    const recipe = await recipeModel.findById({ _id: req.params.id });
+    res.status(200).json(recipe)
 });
 
 // severs listens for a http request coming in

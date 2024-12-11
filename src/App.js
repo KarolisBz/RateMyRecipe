@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import NavBar from './client/components/NavBar';
 import Home from './client/components/Home';
 import Recipes from './client/components/Recipes';
+import RecipeDetails from './client/components/RecipeDetails';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         {/* Routes set to components which contain the JS XML content*/}
         <Route path="/" element={<Navigate to="/home" replace/>} />
         <Route path="/home" element={<Home/>} />
-        <Route path="/Recipes/:recipeType" element={<Recipes/>} />
+        <Route path="/Recipes/:category" element={<Recipes/>} />
+        <Route path="/RecipeDetails/:id" element={<RecipeDetails/>} />
       </Routes>
     </Router>
   );

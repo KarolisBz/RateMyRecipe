@@ -9,7 +9,7 @@ import { Carousel } from 'react-bootstrap';
 const Home = () => {
   return (
     <div>
-      <Carousel>
+      <Carousel className="window-width">
         <Carousel.Item>
           <img src={CoverImg} alt="Image of food" className="window-width" />
           <Carousel.Caption>

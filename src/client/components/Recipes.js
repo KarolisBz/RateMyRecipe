@@ -13,13 +13,13 @@ import { Search } from "react-bootstrap-icons";
 const AllRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
-    const typeDisplay = useParams()['recipeType']; // fetch the recipeType from path
+    const category = useParams()['category']; // fetch the recipeType from path
 
     // on reload fetch updated list
     const Reload = () => {
         console.log("Reloading recipes data...");
         // asynchronous, works in the background to "fetch" json data via response
-        axios.get('http://localhost:4000/api/recipes/' + typeDisplay)
+        axios.get('http://localhost:4000/api/recipes/' + category)
             .then((response) => {
                 console.log(response.data);
                 setRecipes(response.data)
@@ -32,7 +32,7 @@ const AllRecipes = () => {
     // react hook synchronize with server api (fires on component loading)
     useEffect(() => {
         Reload();
-    }, [typeDisplay]); // table never changes, so only runs on page load
+    }, [category]); // table never changes, so only runs on page load
 
     // search bar functionality
     // filtering recipe array based on search result

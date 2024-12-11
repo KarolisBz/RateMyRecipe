@@ -1,7 +1,7 @@
 // Component imports
 import { useEffect } from "react";
 import { Card } from "react-bootstrap";
-import { Link } from 'react-router-dom'; // navigate to a new route without refreshing the page
+import { Link, NavLink } from 'react-router-dom'; // navigate to a new route without refreshing the page
 import axios from "axios"; // importing axios for async operations
 import Badge from 'react-bootstrap/Badge'; // imports btn
 import '../styles/main.css';
@@ -27,9 +27,9 @@ const RecipeItem = (props) => {
 
     return (
         <div className="col-auto mb-3" style={{ width: '18rem'}}>
-            <Link to={"/home"} className="no-decore">
+            <Link to={"/RecipeDetails/" + props.recipe._id} as={NavLink} className="no-decore">
                 <Card bg="light" text="black">
-                    <Card.Title style={{textAlign: 'center'}}>{props.recipe.title}</Card.Title>
+                    <Card.Title className="center-text">{props.recipe.title}</Card.Title>
                     <Card.Img className="centered-image" src={props.recipe.thumbnail} alt={props.recipe.title} style={{width: '16rem', height: '16rem', objectFit: 'fill'}}/>
                     <Card.Body>
                         <Card.Text className="eclipsed-text" style={{ maxHeight: '3rem'}}>
