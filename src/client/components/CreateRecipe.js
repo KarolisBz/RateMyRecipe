@@ -1,70 +1,64 @@
 // class fields
-import { useState } from "react";
-import axios from "axios";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { Card, ListGroup } from "react-bootstrap";
+import { Form } from 'react-bootstrap';
 
 // Read content to be imported
-const Create = () => {
-  // using states we set recipe data - 'useState' allows functional components to use states
-  // that work like global vars but with extra computing in between if required
+const CreateRecipe = () => {
   const [title, setTitle] = useState('');
-  const [year, setYear] = useState('');
-  const [poster, setPoster] = useState('');
+  const [description, setDescription] = useState('');
+  const [postDate, setPostDate] = useState('');
+  const [thumbnail, setThumbnail] = useState('');
+  const [calories, setCalories] = useState('');
+  const [fat, setFat] = useState('');
+  const [protein, setProtein] = useState('');
+  const [salt, setSalt] = useState('');
+  const [reviews, setReviews] = useState([]);
+  const [category, setCategory] = useState('');
+
 
   // logs form information
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log(`Title: ${title}, Year: ${year}, Poster: ${poster}`);
-    
-    const movie = {
+
+    const recipe = {
       title: title,
-      year: year,
-      poster: poster
+      description: description,
+      postDate: postDate,
+      thumbnail: thumbnail,
+      calories: calories,
+      fat: fat,
+      protein: protein,
+      salt: salt,
+      reviews: reviews,
+      title: title,
+      category: category
     };
-    
+
     // dynamically posts and rendered in the frontend asynchronously
-    axios.post('http://localhost:4000/api/movies', movie)
+    axios.post('http://localhost:4000/api/recipe', recipe)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err.data));
   };
 
   return (
-    <div>
-      <h3>Hello from the Read Create component</h3>
-      {/*form, fires handleSubmit on submit*/}
-      <form onSubmit={handleSubmit}>
-        <div>
-          {/*Handles Title info*/}
-          <label>Add Movie Title: </label>
-          <input type="text"
-            className="form-control"
-            value={title}
-            onChange={(e) => { setTitle(e.target.value) }}></input>
-        </div>
-        <div>
-          {/*Handles Movie Year info*/}
-          <label>Add Movie Year: </label>
-          <input type="text"
-            className="form-control"
-            value={year}
-            onChange={(e) => { setYear(e.target.value) }}></input>
-        </div>
-        <div>
-          {/*Handles Movie poster URL*/}
-          <label>Add Movie poster URL: </label>
-          <input type="text"
-            className="form-control"
-            value={poster}
-            onChange={(e) => { setPoster(e.target.value) }}></input>
-        </div>
-        <div>
-          {/*submits form*/}
-          <input type="submit" value="Add Movie"></input>
-        </div>
-      </form>
-    </div>
+    <div style={{ padding: '2vh', width: '50vw', minHeight: '80vh', margin: 'auto', marginTop: '0.5rem'}} className="greyLevel3">
+      <Form>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="name@example.com" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label>Example textarea</Form.Label>
+          <Form.Control as="textarea" rows={3} />
+        </Form.Group>
+      </Form>
+    </div >
   );
 }
 
 // exporting module to be used in app.js
-export default Create;
+export default CreateRecipe;

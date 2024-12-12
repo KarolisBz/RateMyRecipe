@@ -73,6 +73,16 @@ app.put('/api/recipe/:id', async (req, res) => {
     res.send(recipe);
 });
 
+// handles deleting of recipes on server side
+app.delete('/api/recipe/:id', async (req, res) => {
+    console.log('Deleting recipe with ID:', req.params.id);
+
+    // removing the specified movie from the MongoDB database.
+    const recipe = await recipeModel.findByIdAndDelete(req.params.id);
+    
+    // Sends a success or error response based on the outcome of the deletion
+    res.status(200).send({ message: "recipe deleted successfully", recipe });
+});
 
 // severs listens for a http request coming in
 app.listen(port, () => {

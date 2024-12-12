@@ -16,6 +16,7 @@ const RecipeDetails = () => {
     const [recipe, setRecipe] = useState([]);
     let { id } = useParams();
     let datePosted = new Date(recipe.postDate)
+    const navigate = useNavigate();
 
     const reload = () => {
         axios.get('http://localhost:4000/api/recipe/' + id)
@@ -32,6 +33,17 @@ const RecipeDetails = () => {
         reload();
     }, []);
 
+    const handleDelete = (e) => {
+        e.preventDefault();
+        axios.delete('http://localhost:4000/api/recipe/' + id)
+            .then(() => {
+                navigate('/recipes/all');
+            })
+            .catch((error) => {
+                console.error("Error deleting recipe:", error);
+            });
+    };
+
     return (
         <div style={{ padding: '2vh' }}>
             <Card style={{ width: '50vw', minHeight: '80vh', margin: 'auto' }} className="greyLevel3">
@@ -47,6 +59,7 @@ const RecipeDetails = () => {
                         src={recipe.thumbnail}
                     />
                 </div>
+                <div style={{ marginTop: '0.5rem' }} />
                 {recipe.reviews != undefined && <StarRating reviews={recipe.reviews} aggrigate={true} />}
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item><h4 className="title-inline">Category: </h4><h6 className="title-inline">{recipe.category}</h6></ListGroup.Item>
@@ -71,7 +84,13 @@ const RecipeDetails = () => {
                     <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <CreateReview id={id} oldData={recipe} reloadDetails={reload}/>
+                    <Button variant="outline-success" style={{ width: '100%' }}>
+                        <strong>Edit Recipie</strong>
+                    </Button>
+                    <Button onClick={handleDelete} variant="outline-danger" style={{ width: '100%' }}>
+                        <strong>Delete Recipie</strong>
+                    </Button>
+                    <CreateReview id={id} oldData={recipe} reloadDetails={reload} />
                     <Stack gap={3} className="mt-4">
                         {recipe.reviews != undefined && <CommentList reviews={recipe.reviews} aggrigate={false} />}
                     </Stack>
