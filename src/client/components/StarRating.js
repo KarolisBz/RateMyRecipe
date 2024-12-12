@@ -2,6 +2,7 @@ import { CodeSlash, Star, StarFill } from "react-bootstrap-icons";
 import '../styles/main.css';
 
 const StarRating = (props) => {
+    console.log(props)
     let reviews = props.reviews;
     let averageRating = 0;
 

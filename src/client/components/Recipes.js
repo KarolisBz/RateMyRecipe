@@ -32,7 +32,7 @@ const AllRecipes = () => {
     // react hook synchronize with server api (fires on component loading)
     useEffect(() => {
         Reload();
-    }, [category]); // table never changes, so only runs on page load
+    }, [category]);
 
     // search bar functionality
     // filtering recipe array based on search result

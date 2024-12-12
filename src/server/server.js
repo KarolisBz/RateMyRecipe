@@ -14,13 +14,12 @@ const cors = require('cors');
 const { type } = require('@testing-library/user-event/dist/type');
 app.use(cors());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
-
 
 // connecting to mongoose database rateMyRecipe
 const mongoose = require('mongoose');
@@ -41,20 +40,20 @@ const recipeSchema = new mongoose.Schema({
     thumbnail: String,
     calories: Number,
     reviews: [reviewSchema],
-  });
+});
 
 // added data model which is a blueprint for defining the structure of data within a MongoDB collection
 const recipeModel = mongoose.model('recipes', recipeSchema);
 
 
 // if we get a request, 'Welcome to Data Respresentation & Querying'
-app.get('/api/recipes/:category', async(req, res) => {
+app.get('/api/recipes/:category', async (req, res) => {
     // getting recipe return type
-    let query = {category: req.params.category}
+    let query = { category: req.params.category }
     if (req.params.category == "All") {
         query = {}
     }
-    
+
     // fetch recipe based on type
     const recipes = await recipeModel.find(query); // fetching based on type
     console.log(recipes)
@@ -65,7 +64,8 @@ app.get('/api/recipes/:category', async(req, res) => {
 
 // route fetches a specific recipe by its ID
 app.get('/api/recipe/:id', async (req, res) => {
-    const recipe = await recipeModel.findById({ _id: req.params.id });
+    const recipe = await recipeModel.findById(req.params.id).lean();
+    console.log(recipe)
     res.status(200).json(recipe)
 });
 
