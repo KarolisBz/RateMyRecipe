@@ -67,7 +67,7 @@ app.get('/api/recipe/:id', async (req, res) => {
     res.status(200).json(recipe)
 });
 
-// adds new comment to a recipie
+// updates recipe
 app.put('/api/recipe/:id', async (req, res) => {
     const recipe = await recipeModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.send(recipe);
