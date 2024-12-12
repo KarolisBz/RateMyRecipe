@@ -13,13 +13,11 @@ import Stack from 'react-bootstrap/Stack';
 import { Button } from 'react-bootstrap';
 
 const RecipeDetails = () => {
-    const navigate = useNavigate();
     const [recipe, setRecipe] = useState([]);
     let { id } = useParams();
     let datePosted = new Date(recipe.postDate)
 
-    // hooks event, updates information when component mounts or updates
-    useEffect(() => {
+    const reload = () => {
         axios.get('http://localhost:4000/api/recipe/' + id)
             .then((response) => {
                 setRecipe(response.data)
@@ -27,6 +25,11 @@ const RecipeDetails = () => {
             .catch((error) => {
                 console.log(error)
             });
+    }
+
+    // hooks event, updates information when component mounts or updates
+    useEffect(() => {
+        reload();
     }, []);
 
     return (
@@ -68,7 +71,7 @@ const RecipeDetails = () => {
                     <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <CreateReview id={id}/>
+                    <CreateReview id={id} oldData={recipe} reloadDetails={reload}/>
                     <Stack gap={3} className="mt-4">
                         {recipe.reviews != undefined && <CommentList reviews={recipe.reviews} aggrigate={false} />}
                     </Stack>

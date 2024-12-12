@@ -45,8 +45,6 @@ const recipeSchema = new mongoose.Schema({
 // added data model which is a blueprint for defining the structure of data within a MongoDB collection
 const recipeModel = mongoose.model('recipes', recipeSchema);
 
-
-// if we get a request, 'Welcome to Data Respresentation & Querying'
 app.get('/api/recipes/:category', async (req, res) => {
     // getting recipe return type
     let query = { category: req.params.category }
@@ -68,6 +66,13 @@ app.get('/api/recipe/:id', async (req, res) => {
     console.log(recipe)
     res.status(200).json(recipe)
 });
+
+// adds new comment to a recipie
+app.put('/api/recipe/:id', async (req, res) => {
+    const recipe = await recipeModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.send(recipe);
+});
+
 
 // severs listens for a http request coming in
 app.listen(port, () => {

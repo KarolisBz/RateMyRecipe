@@ -9,9 +9,9 @@ const CommentList = (props) => {
     return (
         reviewData.map((review, index) => {
             return (
-            <Card>
+            <Card key={index}>
                 <Card.Body>
-                    <StarRating reviews={reviewData}/>
+                    <StarRating reviews={[review]}/>
                     <Card.Text>
                        {review.comment}
                     </Card.Text>
