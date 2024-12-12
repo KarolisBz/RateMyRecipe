@@ -46,7 +46,7 @@ const RecipeDetails = () => {
 
     return (
         <div style={{ padding: '2vh' }}>
-            <Card style={{ width: '50vw', minHeight: '80vh', margin: 'auto' }} className="greyLevel3">
+            <Card style={{ width: '50vw', margin: 'auto' }} className="greyLevel3">
                 <Card.Title className="center-text">{recipe.title}</Card.Title>
                 <div style={{ background: 'radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(230,255,240,1) 37%, rgba(0,212,255,1) 100%)' }}>
                     <Card.Img
@@ -79,9 +79,9 @@ const RecipeDetails = () => {
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item><h4 className="title-inline">Calories: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
-                    <ListGroup.Item><h4 className="title-inline">Fat: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
-                    <ListGroup.Item><h4 className="title-inline">Protein: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
-                    <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Fat: </h4><h6 className="title-inline">{recipe.fat}</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Protein: </h4><h6 className="title-inline">{recipe.protein}</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.salt}</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
                     <Button variant="outline-success" style={{ width: '100%' }}>

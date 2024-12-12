@@ -11,8 +11,7 @@ import StarRating from "./StarRating";
 const RecipeItem = (props) => {
     // hooks event, logs props to the console whenever the component mounts or updates
     useEffect(() => {
-        console.log("recipe:", props.recipe);
-    }, [props.recipe]); // added dependacy array as recipe so it only runs if recipe changes
+    }, [props.recipe]);
 
     const handleDelete = (e) => {
         e.preventDefault();
@@ -37,10 +36,10 @@ const RecipeItem = (props) => {
                         </Card.Text>
                         <StarRating reviews={props.recipe.reviews} aggrigate={true}/>
                         <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.25rem'}}>
-                            <Badge bg="dark">Calories: 1300kcal</Badge>
-                            <Badge bg="dark">Fat: 16.6g</Badge>
-                            <Badge bg="dark">Protein: 13.8g</Badge>
-                            <Badge bg="dark">Salt: 1.92g</Badge>
+                            <Badge bg="dark">Calories: {props.recipe.calories}kcal</Badge>
+                            <Badge bg="dark">Fat: {props.recipe.fat}g</Badge>
+                            <Badge bg="dark">Protein: {props.recipe.protein}g</Badge>
+                            <Badge bg="dark">Salt: {props.recipe.salt}g</Badge>
                         </div>
                     </Card.Body>
                 </Card>

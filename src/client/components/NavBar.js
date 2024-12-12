@@ -4,15 +4,18 @@ import Nav from 'react-bootstrap/Nav';
 import { Navbar } from 'react-bootstrap';
 import '../styles/colorTheme.css';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 // building a navigation Bar Via Bootstrap
 const NavBar = () => {
+  const location = useLocation();
+
   return (
         <Navbar className="greyLevel3">
                 <Container className="justify-content-center">
-                    <Nav variant="tabs" defaultActiveKey={"/home"}>
+                    <Nav variant="tabs" key={location.pathname}>
                         <Nav.Link to="/home" as={NavLink} eventKey="link-1">Home</Nav.Link>
-                        <Nav.Link to='/CreateRecipe' as={NavLink} eventKey="link-9">Create Recipe</Nav.Link>
+                        <Nav.Link to='/CreateRecipe' as={NavLink} eventKey="link-11">Create Recipe</Nav.Link>
                         <Nav.Link to="/Recipes/All" as={NavLink} eventKey="link-2">All Recipes</Nav.Link>
                         <Nav.Link to="/Recipes/Favorites" as={NavLink} eventKey="link-3">Favorites</Nav.Link>
                         <Nav.Link to="/Recipes/Appetizers" as={NavLink} eventKey="link-4">Appetizers</Nav.Link>

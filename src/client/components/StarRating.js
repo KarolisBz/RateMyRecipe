@@ -2,7 +2,6 @@ import { Star, StarFill } from "react-bootstrap-icons";
 import '../styles/main.css';
 
 const StarRating = (props) => {
-    console.log(props)
     let reviews = props.reviews;
     let averageRating = 0;
 
@@ -10,7 +9,7 @@ const StarRating = (props) => {
     reviews.forEach(review => {
         averageRating += Number(review.rating);
     });
-    averageRating = averageRating / reviews.length;
+    averageRating = reviews.length > 0 ? averageRating / reviews.length : 0;
 
     // calculating star fills
     let filledStars = Math.floor(averageRating);

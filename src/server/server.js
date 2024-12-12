@@ -39,6 +39,9 @@ const recipeSchema = new mongoose.Schema({
     category: String,
     thumbnail: String,
     calories: Number,
+    fat: Number,
+    protein: Number,
+    salt: Number,
     reviews: [reviewSchema],
 });
 
@@ -73,16 +76,48 @@ app.put('/api/recipe/:id', async (req, res) => {
     res.send(recipe);
 });
 
-// handles deleting of recipes on server side
+// handles deleting of recipes
 app.delete('/api/recipe/:id', async (req, res) => {
     console.log('Deleting recipe with ID:', req.params.id);
 
     // removing the specified movie from the MongoDB database.
     const recipe = await recipeModel.findByIdAndDelete(req.params.id);
-    
+
     // Sends a success or error response based on the outcome of the deletion
     res.status(200).send({ message: "recipe deleted successfully", recipe });
 });
+
+// adds new recipes to the database
+app.post('/api/recipe', async (req, res) => {
+    // fetching passed data
+    const { title: title,
+        description: description,
+        postDate: postDate,
+        thumbnail: thumbnail,
+        calories: calories,
+        fat: fat,
+        protein: protein,
+        salt: salt,
+        reviews: reviews,
+        category: category } = req.body;
+
+    // creating new recipe object
+    const newRecipe = new recipeModel({
+        title: title,
+        description: description,
+        postDate: postDate,
+        thumbnail: thumbnail,
+        calories: calories,
+        fat: fat,
+        protein: protein,
+        salt: salt,
+        reviews: reviews,
+        category: category
+    });
+    await newRecipe.save(); // execute async while blocking code to not post movie created before movie was created
+
+    res.status(201).json({ message: 'Recipe created successfully', recipe: newRecipe });
+})
 
 // severs listens for a http request coming in
 app.listen(port, () => {
