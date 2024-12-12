@@ -1,4 +1,4 @@
-import { CodeSlash, Star, StarFill } from "react-bootstrap-icons";
+import { Star, StarFill } from "react-bootstrap-icons";
 import '../styles/main.css';
 
 const StarRating = (props) => {
@@ -35,7 +35,7 @@ const StarRating = (props) => {
     
     return (
         <div>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.25rem'}}>
+            <div className='star-container'>
                 {stars.map((fillPercent, index) => {
                     if (fillPercent == 1) {
                         return <StarFill key={index} className="icon-wrap" size={"2rem"}/> // star is fully filled, don't need 2x images

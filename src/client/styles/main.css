@@ -1,6 +1,6 @@
-.window-width {
+.window-span {
     width: 100vw;
-    height: 50vh;
+    height: 93.9vh;
 }
 
 .centered-image {
@@ -37,6 +37,20 @@
     overflow: hidden;
 }
 
+.star-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .title-inline {
     display: inline;
+}
+
+.invisible-button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }

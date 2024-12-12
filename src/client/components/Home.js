@@ -9,25 +9,25 @@ import { Carousel } from 'react-bootstrap';
 const Home = () => {
   return (
     <div>
-      <Carousel className="window-width">
+      <Carousel className="window-span">
         <Carousel.Item>
-          <img src={CoverImg} alt="Image of food" className="window-width" />
+          <img src={CoverImg} alt="Image of food" className="window-span" />
           <Carousel.Caption>
-            <h1>Recipe Categories</h1>
+            <h1>Browse Recipes!</h1>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={CoverImg} alt="Image of food" className="window-width" />
+          <img src={CoverImg} alt="Image of food" className="window-span" />
           <Carousel.Caption>
-            <h1>Recipe Categories</h1>
+            <h1>Create Recipe!</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={CoverImg} alt="Image of food" className="window-width" />
+          <img src={CoverImg} alt="Image of food" className="window-span" />
           <Carousel.Caption>
-            <h1>Recipe Categories</h1>
+            <h1>Leave Reviews</h1>
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>

@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { Card, ListGroup } from "react-bootstrap";
 import StarRating from './StarRating';
 import CommentList from './CommentList';
+import CreateReview from './CreateReview';
 import Stack from 'react-bootstrap/Stack';
+import { Button } from 'react-bootstrap';
 
 const RecipeDetails = () => {
     const navigate = useNavigate();
@@ -66,6 +68,7 @@ const RecipeDetails = () => {
                     <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
+                    <CreateReview id={id}/>
                     <Stack gap={3} className="mt-4">
                         {recipe.reviews != undefined && <CommentList reviews={recipe.reviews} aggrigate={false} />}
                     </Stack>
