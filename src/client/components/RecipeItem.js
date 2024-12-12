@@ -33,10 +33,9 @@ const RecipeItem = (props) => {
                     <Card.Img className="centered-image" src={props.recipe.thumbnail} alt={props.recipe.title} style={{width: '16rem', height: '16rem', objectFit: 'fill'}}/>
                     <Card.Body>
                         <Card.Text className="eclipsed-text" style={{ maxHeight: '3rem'}}>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            {props.recipe.description}
                         </Card.Text>
-                        <StarRating reviews={props.recipe.reviews}/>
+                        <StarRating reviews={props.recipe.reviews} aggrigate={true}/>
                         <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.25rem'}}>
                             <Badge bg="dark">Calories: 1300kcal</Badge>
                             <Badge bg="dark">Fat: 16.6g</Badge>

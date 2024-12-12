@@ -5,6 +5,7 @@ import NavBar from './client/components/NavBar';
 import Home from './client/components/Home';
 import Recipes from './client/components/Recipes';
 import RecipeDetails from './client/components/RecipeDetails';
+import Comments from './client/components/CommentList';
 
 function App() {
   return (

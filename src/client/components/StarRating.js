@@ -57,7 +57,7 @@ const StarRating = (props) => {
                     }
                 })}
             </div>
-            <p style={{textAlign: 'center'}}>{"[" + averageRating + "]"} {reviews.length} reviews</p>
+            {props.aggrigate && <p style={{textAlign: 'center'}}>{"[" + averageRating + "]"} {reviews.length} reviews</p>}
         </div>
     );
 };

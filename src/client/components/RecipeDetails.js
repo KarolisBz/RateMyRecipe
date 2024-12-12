@@ -7,6 +7,8 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { Card, ListGroup } from "react-bootstrap";
 import StarRating from './StarRating';
+import CommentList from './CommentList';
+import Stack from 'react-bootstrap/Stack';
 
 const RecipeDetails = () => {
     const navigate = useNavigate();
@@ -24,10 +26,10 @@ const RecipeDetails = () => {
                 console.log(error)
             });
     }, []);
-    
+
     return (
         <div style={{ padding: '2vh' }}>
-            <Card style={{ width: '50vw', height: '80vh', margin: 'auto' }} className="greyLevel3">
+            <Card style={{ width: '50vw', minHeight: '80vh', margin: 'auto' }} className="greyLevel3">
                 <Card.Title className="center-text">{recipe.title}</Card.Title>
                 <div style={{ background: 'radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(230,255,240,1) 37%, rgba(0,212,255,1) 100%)' }}>
                     <Card.Img
@@ -40,7 +42,7 @@ const RecipeDetails = () => {
                         src={recipe.thumbnail}
                     />
                 </div>
-                {recipe.reviews != undefined && <StarRating reviews={recipe.reviews}/>}
+                {recipe.reviews != undefined && <StarRating reviews={recipe.reviews} aggrigate={true} />}
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item><h4 className="title-inline">Category: </h4><h6 className="title-inline">{recipe.category}</h6></ListGroup.Item>
                     <ListGroup.Item>
@@ -53,9 +55,6 @@ const RecipeDetails = () => {
                             })}
                         </h6>
                     </ListGroup.Item>
-                    <ListGroup.Item>
-                        
-                    </ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
                     <Card.Text>{recipe.description}</Card.Text>
@@ -67,8 +66,9 @@ const RecipeDetails = () => {
                     <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
+                    <Stack gap={3} className="mt-4">
+                        {recipe.reviews != undefined && <CommentList reviews={recipe.reviews} aggrigate={false} />}
+                    </Stack>
                 </Card.Body>
             </Card>
         </div >
