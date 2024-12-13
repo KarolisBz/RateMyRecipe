@@ -17,9 +17,10 @@ const EditRecipe = () => {
     const [protein, setProtein] = useState("");
     const [salt, setSalt] = useState("");
     const [reviews, setReviews] = useState([]);
-    const [category, setCategory] = useState("");
-    const [datePosted, setDatePosted] = useState(new Date());
+    const [category, setCategory] = useState("1");
+    const [datePosted, setDatePosted] = useState('');
     let { id } = useParams();
+    let cachedDate;
 
     useEffect(() => {
         axios.get('http://localhost:4000/api/recipe/' + id)
@@ -33,14 +34,13 @@ const EditRecipe = () => {
                 setSalt(response.data.salt)
                 setReviews(response.data.reviews)
                 setCategory(response.data.category)
-                setDatePosted(response.data.datePosted)
-                
+                setDatePosted(response.data.postDate)
             }) // callback function exectured when fullfilled or an error is thrown
             .catch((error) => {
                 console.log(error)
             });
     }, []);
-  
+
     // logs form information
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -100,7 +100,11 @@ const EditRecipe = () => {
                         required
                         disabled
                         readOnly
-                        value={datePosted}
+                        value={new Date(datePosted).toLocaleDateString('en-GB', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                        })}
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="calories">

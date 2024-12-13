@@ -17,11 +17,7 @@ const CreateRecipe = () => {
   const [salt, setSalt] = useState('');
   const [reviews, setReviews] = useState([]);
   const [category, setCategory] = useState("1");
-  let datePosted = new Date().toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  })
+  let datePosted = new Date();
 
 
   // logs form information
@@ -85,7 +81,11 @@ const CreateRecipe = () => {
             required
             disabled
             readOnly
-            value={datePosted}
+            value={datePosted.toLocaleDateString('en-GB', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+            })}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="calories">
