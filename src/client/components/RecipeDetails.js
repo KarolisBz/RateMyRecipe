@@ -37,7 +37,7 @@ const RecipeDetails = () => {
         e.preventDefault();
         axios.delete('http://localhost:4000/api/recipe/' + id)
             .then(() => {
-                navigate('/recipes/all');
+                navigate('/recipes/All');
             })
             .catch((error) => {
                 console.error("Error deleting recipe:", error);

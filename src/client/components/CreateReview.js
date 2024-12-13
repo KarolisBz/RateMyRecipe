@@ -48,6 +48,8 @@ const CreateReview = (props) => {
                 console.log(res.data);
                 props.reloadDetails();
                 toggleShowPost();
+                changeRating(0); // reset
+                setCommentBody("");
             });
     };
 
