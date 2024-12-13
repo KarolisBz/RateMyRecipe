@@ -58,19 +58,17 @@ app.get('/api/recipes/:category', async (req, res) => {
     // fetch recipe based on type
     const recipes = await recipeModel.find(query); // fetching based on type
     console.log(recipes)
-
-    // give back respone in json format with status 200 'okay'
     res.status(200).json(recipes)
 });
 
-// route fetches a specific recipe by its ID
+// returns specific recipe by its ID
 app.get('/api/recipe/:id', async (req, res) => {
     const recipe = await recipeModel.findById(req.params.id);
     console.log(recipe)
     res.status(200).json(recipe)
 });
 
-// updates recipe
+// updates recipe via ID
 app.put('/api/recipe/:id', async (req, res) => {
     const recipe = await recipeModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.send(recipe);
@@ -80,7 +78,7 @@ app.put('/api/recipe/:id', async (req, res) => {
 app.delete('/api/recipe/:id', async (req, res) => {
     console.log('Deleting recipe with ID:', req.params.id);
 
-    // removing the specified movie from the MongoDB database.
+    // removing the specified recipe from the MongoDB database.
     const recipe = await recipeModel.findByIdAndDelete(req.params.id);
 
     // Sends a success or error response based on the outcome of the deletion
@@ -114,7 +112,7 @@ app.post('/api/recipe', async (req, res) => {
         reviews: reviews,
         category: category
     });
-    await newRecipe.save(); // execute async while blocking code to not post movie created before movie was created
+    await newRecipe.save(); // execute async while blocking code to not post recipie created before recipie was created
 
     res.status(201).json({ message: 'Recipe created successfully', recipe: newRecipe });
 })

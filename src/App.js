@@ -14,7 +14,7 @@ function App() {
       {/* External NavBar componenet*/}
       <NavBar />
       <Routes>
-        {/* Routes set to components which contain the JS XML content*/}
+        {/* Routes set to components which contain the JS jsx content*/}
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/CreateRecipe" element={<CreateRecipe />} />
