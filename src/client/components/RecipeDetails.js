@@ -66,7 +66,7 @@ const RecipeDetails = () => {
                     <ListGroup.Item>
                         <h4 className="title-inline">Date Posted: </h4>
                         <h6 className="title-inline">
-                            {datePosted.toLocaleTimeString('en-GB', {
+                            {datePosted.toLocaleDateString('en-GB', {
                                 day: '2-digit',
                                 month: '2-digit',
                                 year: 'numeric',
@@ -78,10 +78,10 @@ const RecipeDetails = () => {
                     <Card.Text>{recipe.description}</Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroup.Item><h4 className="title-inline">Calories: </h4><h6 className="title-inline">{recipe.calories}</h6></ListGroup.Item>
-                    <ListGroup.Item><h4 className="title-inline">Fat: </h4><h6 className="title-inline">{recipe.fat}</h6></ListGroup.Item>
-                    <ListGroup.Item><h4 className="title-inline">Protein: </h4><h6 className="title-inline">{recipe.protein}</h6></ListGroup.Item>
-                    <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.salt}</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Calories: </h4><h6 className="title-inline">{recipe.calories}kcal</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Fat: </h4><h6 className="title-inline">{recipe.fat}g</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Protein: </h4><h6 className="title-inline">{recipe.protein}g</h6></ListGroup.Item>
+                    <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.salt}g</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
                     <Button onClick={() => {navigate('/EditRecipe/'+id)}} variant="outline-success" style={{ width: '100%' }}>

@@ -108,7 +108,7 @@ const EditRecipe = () => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="calories">
-                    <Form.Label><strong>Calories:</strong></Form.Label>
+                    <Form.Label><strong>Calories &#40;kcal&#41;:</strong></Form.Label>
                     <Form.Control type="text"
                         required
                         value={calories}
@@ -116,7 +116,7 @@ const EditRecipe = () => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="fat">
-                    <Form.Label><strong>Fat:</strong></Form.Label>
+                    <Form.Label><strong>Fat &#40;g&#41;:</strong></Form.Label>
                     <Form.Control type="text"
                         required
                         value={fat}
@@ -124,7 +124,7 @@ const EditRecipe = () => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="protein">
-                    <Form.Label><strong>Protein:</strong></Form.Label>
+                    <Form.Label><strong>Protein &#40;g&#41;:</strong></Form.Label>
                     <Form.Control type="text"
                         required
                         value={protein}
