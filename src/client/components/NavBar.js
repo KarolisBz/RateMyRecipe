@@ -17,7 +17,6 @@ const NavBar = () => {
                         <Nav.Link to="/home" as={NavLink} eventKey="link-1">Home</Nav.Link>
                         <Nav.Link to='/CreateRecipe' as={NavLink} eventKey="link-11">Create Recipe</Nav.Link>
                         <Nav.Link to="/Recipes/All" as={NavLink} eventKey="link-2">All Recipes</Nav.Link>
-                        <Nav.Link to="/Recipes/Favorites" as={NavLink} eventKey="link-3">Favorites</Nav.Link>
                         <Nav.Link to="/Recipes/Appetizers" as={NavLink} eventKey="link-4">Appetizers</Nav.Link>
                         <Nav.Link to="/Recipes/Salads" as={NavLink} eventKey="link-5">Salads</Nav.Link>
                         <Nav.Link to="/Recipes/Soups" as={NavLink} eventKey="link-6">Soups</Nav.Link>

@@ -21,45 +21,23 @@ const AllRecipes = () => {
                 if (a.title > b.title) return 1;
                 return 0;
             },
-            CalUp: (a, b) => {
-                if (a.calories < b.calories) return -1;
-                if (a.calories > b.calories) return 1;
-                return 0;
+            CalUp: (a, b) => a.calories - b.calories,
+            CalDown: (a, b) => b.calories - a.calories,
+            FatUp: (a, b) => a.fat - b.fat,
+            FatDown: (a, b) => b.fat - a.fat,
+            ProUp: (a, b) => a.protein - b.protein,
+            ProDown: (a, b) => b.protein - a.protein,
+            SaltUp: (a, b) => a.salt - b.salt,
+            SaltDown: (a, b) => b.salt - a.salt,
+            RatingUp: (a, b) => {
+                let aAvg = a.reviews.length > 0 ? a.reviews.reduce((sum, review) => sum + review.rating, 0) / a.reviews.length : 0;
+                let bAvg = b.reviews.length > 0 ? b.reviews.reduce((sum, review) => sum + review.rating, 0) / b.reviews.length : 0;
+                return aAvg - bAvg;
             },
-            CalDown: (a, b) => {
-                if (a.calories > b.calories) return -1;
-                if (a.calories < b.calories) return 1;
-                return 0;
-            },
-            FatUp: (a, b) => {
-                if (a.fat < b.fat) return -1;
-                if (a.fat > b.fat) return 1;
-                return 0;
-            },
-            FatDown: (a, b) => {
-                if (a.fat > b.fat) return -1;
-                if (a.fat < b.fat) return 1;
-                return 0;
-            },
-            ProUp: (a, b) => {
-                if (a.protein < b.protein) return -1;
-                if (a.protein > b.protein) return 1;
-                return 0;
-            },
-            ProDown: (a, b) => {
-                if (a.protein > b.protein) return -1;
-                if (a.protein < b.protein) return 1;
-                return 0;
-            },
-            SaltUp: (a, b) => {
-                if (a.salt < b.salt) return -1;
-                if (a.salt > b.salt) return 1;
-                return 0;
-            },
-            SaltDown: (a, b) => {
-                if (a.salt > b.salt) return -1;
-                if (a.salt < b.salt) return 1;
-                return 0;
+            RatingDown: (a, b) => {
+                let aAvg = a.reviews.length > 0 ? a.reviews.reduce((sum, review) => sum + review.rating, 0) / a.reviews.length : 0;
+                let bAvg = b.reviews.length > 0 ? b.reviews.reduce((sum, review) => sum + review.rating, 0) / b.reviews.length : 0;
+                return bAvg - aAvg;
             }
         }
     ]
@@ -115,6 +93,8 @@ const AllRecipes = () => {
                                 <option value="ProDown">Protein ⬇️</option>
                                 <option value="SaltUp">Salt ⬆️</option>
                                 <option value="SaltDown">Salt ⬇️</option>
+                                <option value="RatingUp">⭐⬆️</option>
+                                <option value="RatingDown">⭐⬇️</option>
                             </Form.Select>
                         </Col>
                         <Col xs="auto">
