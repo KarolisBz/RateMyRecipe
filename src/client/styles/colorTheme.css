@@ -6,3 +6,7 @@
 .greyLevel3 {
     background-color: rgb(228, 228, 228);
 }
+
+.semi-night {
+    background-color: rgba(0, 0, 0, 0.411);
+}
