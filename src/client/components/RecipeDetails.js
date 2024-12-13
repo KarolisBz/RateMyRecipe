@@ -75,7 +75,11 @@ const RecipeDetails = () => {
                     </ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <Card.Text>{recipe.description}</Card.Text>
+                    <h4>Description: </h4>
+                    <textarea type="text"
+                        className="form-control"
+                        value={recipe.description}
+                    />
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item><h4 className="title-inline">Calories: </h4><h6 className="title-inline">{recipe.calories}kcal</h6></ListGroup.Item>
@@ -84,7 +88,7 @@ const RecipeDetails = () => {
                     <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.salt}g</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <Button onClick={() => {navigate('/EditRecipe/'+id)}} variant="outline-success" style={{ width: '100%' }}>
+                    <Button onClick={() => { navigate('/EditRecipe/' + id) }} variant="outline-success" style={{ width: '100%' }}>
                         <strong>Edit Recipie</strong>
                     </Button>
                     <Button onClick={handleDelete} variant="outline-danger" style={{ width: '100%' }}>
