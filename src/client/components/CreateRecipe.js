@@ -41,8 +41,6 @@ const CreateRecipe = () => {
         category: category
       };
 
-      console.log(recipe)
-
       // dynamically posts and rendered in the frontend asynchronously
       axios.post('http://localhost:4000/api/recipe', recipe)
         .then((res) => {

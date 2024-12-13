@@ -20,7 +20,6 @@ const EditRecipe = () => {
     const [category, setCategory] = useState("1");
     const [datePosted, setDatePosted] = useState('');
     let { id } = useParams();
-    let cachedDate;
 
     useEffect(() => {
         axios.get('http://localhost:4000/api/recipe/' + id)

@@ -1,3 +1,4 @@
+// Component Fields
 import { Star, StarFill } from "react-bootstrap-icons";
 import '../styles/main.css';
 

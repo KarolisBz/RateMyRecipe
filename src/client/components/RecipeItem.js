@@ -2,27 +2,14 @@
 import { useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link, NavLink } from 'react-router-dom'; // navigate to a new route without refreshing the page
-import axios from "axios"; // importing axios for async operations
-import Badge from 'react-bootstrap/Badge'; // imports btn
+import Badge from 'react-bootstrap/Badge';
 import '../styles/main.css';
 import StarRating from "./StarRating";
 
-// RecipeItem gets "props" data which contains 1 recipe data from parent Movies
 const RecipeItem = (props) => {
     // hooks event, logs props to the console whenever the component mounts or updates
     useEffect(() => {
     }, [props.recipe]);
-
-    const handleDelete = (e) => {
-        e.preventDefault();
-        axios.delete('http://localhost:4000/api/recipe/' + props.recipe._id)
-            .then(() => {
-                props.Reload(); // Refresh the movie list after deletion from function passed down in props
-            })
-            .catch((error) => {
-                console.error("Error deleting movie:", error);
-            });
-    };
 
     return (
         <div className="col-auto mb-3" style={{ width: '18rem'}}>
