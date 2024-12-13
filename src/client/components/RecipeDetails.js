@@ -84,7 +84,7 @@ const RecipeDetails = () => {
                     <ListGroup.Item><h4 className="title-inline">Salt: </h4><h6 className="title-inline">{recipe.salt}</h6></ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <Button variant="outline-success" style={{ width: '100%' }}>
+                    <Button onClick={() => {navigate('/EditRecipe/'+id)}} variant="outline-success" style={{ width: '100%' }}>
                         <strong>Edit Recipie</strong>
                     </Button>
                     <Button onClick={handleDelete} variant="outline-danger" style={{ width: '100%' }}>

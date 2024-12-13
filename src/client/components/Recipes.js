@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Search } from "react-bootstrap-icons";
-
 // Read content to be imported
 const AllRecipes = () => {
     const [recipes, setRecipes] = useState([]);

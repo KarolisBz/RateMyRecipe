@@ -65,7 +65,7 @@ app.get('/api/recipes/:category', async (req, res) => {
 
 // route fetches a specific recipe by its ID
 app.get('/api/recipe/:id', async (req, res) => {
-    const recipe = await recipeModel.findById(req.params.id).lean();
+    const recipe = await recipeModel.findById(req.params.id);
     console.log(recipe)
     res.status(200).json(recipe)
 });
